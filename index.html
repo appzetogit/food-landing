@@ -4,265 +4,140 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GoodFood4You — Order • Enjoy • Repeat</title>
-<meta name="description" content="GoodFood4You — order from the best restaurants near you. Fast delivery, great offers. Order • Enjoy • Repeat.">
+<meta name="description" content="GoodFood4You — order pure veg Indian thalis, dosas, biryani and more from the best restaurants near you. Order • Enjoy • Repeat.">
+<meta name="theme-color" content="#FFA000">
 <link rel="icon" href="assets/logo.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --yellow:#FFC21A; --amber:#FFA000; --orange:#FF7A00; --red:#E3262B;
-  --brown:#3A1D12; --brown-2:#5A2E1C; --ink:#141414; --muted:#6b6257;
-  --bg:#FFFBF2; --card:#ffffff; --line:#f1e6cf;
-  --grad:linear-gradient(135deg,#FFD23F 0%,#FFA000 55%,#FF7A00 100%);
-  --radius:18px; --shadow:0 10px 30px rgba(58,29,18,.10);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
-.brand-txt{font-weight:800;font-style:italic;letter-spacing:-.5px}
-.brand-txt b{color:var(--red);font-weight:800}
-
-/* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top{display:flex;align-items:center;gap:18px;height:72px}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.logo img{width:46px;height:46px;border-radius:12px;object-fit:cover;box-shadow:0 4px 12px rgba(255,122,0,.35)}
-.logo span{font-size:22px}
-.loc{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;font-size:14px;font-weight:600;white-space:nowrap}
-.loc:hover{background:#fff3d6}
-.loc svg{color:var(--red)}
-.search{flex:1;display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:0 14px;height:46px;transition:.2s}
-.search:focus-within{border-color:var(--amber);box-shadow:0 0 0 4px rgba(255,160,0,.15)}
-.search input{flex:1;border:0;outline:0;font:inherit;font-size:14px;background:transparent}
-.icons{display:flex;gap:8px}
-.icon-btn{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#fff;border:1.5px solid var(--line);position:relative}
-.icon-btn:hover{border-color:var(--amber)}
-.badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;font-size:11px;font-weight:700;min-width:19px;height:19px;border-radius:10px;display:grid;place-items:center}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:14px;font-weight:700;font-size:15px;transition:.2s}
-.btn-dark{background:var(--brown);color:#fff}
-.btn-dark:hover{background:var(--brown-2);transform:translateY(-2px)}
-.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(227,38,43,.3)}
-.btn-red:hover{transform:translateY(-2px)}
-.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{padding:12px 18px;font-size:14px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:8px}
-.tab.active,.tab:hover{color:var(--brown);border-color:var(--orange)}
-
-/* Hero */
-.hero{position:relative;overflow:hidden;background:var(--grad);color:var(--brown)}
-.hero::before{content:"";position:absolute;inset:auto 0 0 0;height:38%;opacity:.18;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 120'%3E%3Cpath fill='%233A1D12' d='M0 120V70h30V40h25v30h20V20h30v50h15V55h25v15h30V30h20V10h25v60h20V45h30v25h25V25h20v45h30V50h25v20h20V15h30v55h20V40h25v30h30V60h25v60z'/%3E%3C/svg%3E") repeat-x bottom/600px 120px}
-.hero-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:70px 20px 90px}
-.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.55);padding:7px 14px;border-radius:30px;font-size:13px;font-weight:600}
-.hero h1{font-size:clamp(38px,5.4vw,66px);line-height:1.05;font-weight:800;margin:18px 0 16px;letter-spacing:-1.5px}
-.hero h1 em{color:var(--red);font-style:italic}
-.hero p.lead{font-size:18px;max-width:520px;color:#4a2a1a}
-.tagline{display:flex;gap:14px;align-items:center;margin:22px 0 30px;font-weight:700;font-style:italic;font-size:18px}
-.tagline i{width:7px;height:7px;border-radius:50%;background:var(--red)}
-.hero-search{display:flex;background:#fff;border-radius:18px;padding:8px;box-shadow:0 18px 40px rgba(58,29,18,.25);max-width:560px}
-.hero-search input{flex:1;border:0;outline:0;font:inherit;padding:0 14px;font-size:15px;min-width:0}
-.stats{display:flex;gap:34px;margin-top:34px}
-.stats b{display:block;font-size:26px;font-weight:800}
-.stats span{font-size:13px;color:#5a3a26}
-.hero-art{position:relative;aspect-ratio:1;max-width:480px;justify-self:center;width:100%}
-.plate{position:absolute;inset:8%;border-radius:50%;overflow:hidden;border:10px solid #fff;box-shadow:0 30px 60px rgba(58,29,18,.35)}
-.plate img{width:100%;height:100%;object-fit:cover}
-.float{position:absolute;background:#fff;border-radius:16px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);font-size:13px;font-weight:600;animation:bob 4s ease-in-out infinite}
-.float .e{font-size:24px}
-.float small{display:block;color:var(--muted);font-weight:500;font-size:11px}
-.f1{top:6%;left:-4%}.f2{bottom:12%;right:-6%;animation-delay:1.5s}.f3{bottom:2%;left:4%;animation-delay:.8s}
-@keyframes bob{50%{transform:translateY(-10px)}}
-.steam{position:absolute;top:-6%;left:50%;transform:translateX(-50%);display:flex;gap:8px}
-.steam span{width:6px;height:46px;border-radius:6px;background:linear-gradient(var(--red),transparent);opacity:.7;animation:rise 2.4s ease-in-out infinite}
-.steam span:nth-child(2){animation-delay:.4s;height:56px}.steam span:nth-child(3){animation-delay:.8s}
-@keyframes rise{0%{transform:translateY(10px) scaleY(.7);opacity:0}50%{opacity:.8}100%{transform:translateY(-14px);opacity:0}}
-.swoosh{position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--bg);clip-path:ellipse(70% 100% at 50% 100%)}
-
-section{padding:56px 0}
-.sec-h{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;gap:16px}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--orange);text-transform:uppercase}
-.sec-h h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.5px}
-.link{color:var(--red);font-weight:700;font-size:14px;white-space:nowrap}
-
-/* Quick cards */
-.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-30px;position:relative;z-index:2}
-.qc{border-radius:var(--radius);padding:22px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow);background:#fff;border:1px solid var(--line);transition:.25s;overflow:hidden;position:relative}
-.qc:hover{transform:translateY(-4px)}
-.qc h3{font-size:20px;font-weight:800}
-.qc p{color:var(--muted);font-size:14px}
-.qc .em{font-size:52px;line-height:1}
-.qc.o{background:linear-gradient(135deg,#fff3d1,#ffe08a)}
-.qc.g{background:linear-gradient(135deg,#3A1D12,#6b3620);color:#fff}.qc.g p{color:#f3cfa9}
-.qc.c{background:linear-gradient(135deg,#ffe1dc,#ffc1b8)}
-
-/* Cuisines */
-.cuisines{display:flex;gap:22px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
-.cu{flex:0 0 auto;text-align:center;width:110px}
-.cu .ci{width:110px;height:110px;border-radius:50%;overflow:hidden;border:4px solid #fff;box-shadow:var(--shadow);transition:.25s;background:var(--grad)}
-.cu:hover .ci{transform:scale(1.06);border-color:var(--yellow)}
-.cu img{width:100%;height:100%;object-fit:cover}
-.cu span{display:block;margin-top:10px;font-weight:600;font-size:14px}
-
-/* Filters + Restaurants */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.chip{padding:9px 16px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font-size:13px;font-weight:600;transition:.2s}
-.chip:hover{border-color:var(--amber)}
-.chip.on{background:var(--brown);color:#fff;border-color:var(--brown)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
-.rc{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(58,29,18,.07);transition:.25s;border:1px solid var(--line)}
-.rc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.rc .im{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--grad)}
-.rc .im img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.rc:hover .im img{transform:scale(1.07)}
-.tagb{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px}
-.tagb.soon{background:var(--brown)}
-.offer{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-weight:800;font-size:15px}
-.fav{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:16px}
-.rc .bd{padding:14px 16px 16px}
-.rc h4{font-size:17px;font-weight:700;display:flex;justify-content:space-between;gap:8px}
-.rate{background:#1f9d55;color:#fff;font-size:12px;padding:2px 8px;border-radius:7px;display:inline-flex;align-items:center;gap:3px;height:fit-content;white-space:nowrap}
-.rate.new{background:var(--amber);color:var(--brown)}
-.rc .meta{color:var(--muted);font-size:13px;margin-top:4px;display:flex;gap:8px}
-.more{display:flex;justify-content:center;margin-top:30px}
-
-/* How it works */
-.how{background:var(--brown);color:#fff;border-radius:28px;padding:50px 40px;position:relative;overflow:hidden}
-.how::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:var(--grad);opacity:.15;right:-120px;top:-120px}
-.how .sec-h h2{color:#fff}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:1}
-.st{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px}
-.st .n{width:52px;height:52px;border-radius:14px;background:var(--grad);color:var(--brown);display:grid;place-items:center;font-weight:800;font-size:22px;margin-bottom:16px}
-.st h3{font-size:20px;font-style:italic;font-weight:800}
-.st p{color:#e7cdb6;font-size:14px;margin-top:6px}
-
-/* App band */
-.app{background:var(--grad);border-radius:28px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;padding:46px;overflow:hidden}
-.app h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;line-height:1.1;color:var(--brown)}
-.app p{color:#4a2a1a;margin:12px 0 24px}
-.stores{display:flex;gap:12px;flex-wrap:wrap}
-.store{background:#111;color:#fff;border-radius:12px;padding:10px 18px;display:flex;align-items:center;gap:10px;font-size:12px;line-height:1.2}
-.store b{display:block;font-size:16px}
-.app-logo{justify-self:center;width:min(260px,100%);border-radius:36px;box-shadow:0 30px 60px rgba(58,29,18,.35);transform:rotate(-6deg)}
-
-/* Partner */
-.partner{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.pc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 4px 16px rgba(58,29,18,.06)}
-.pc .em{font-size:42px}
-.pc h3{font-size:20px;font-weight:800}
-.pc p{color:var(--muted);font-size:14px;margin:4px 0 14px}
-
-footer{background:#140b07;color:#d9c3ad;margin-top:40px;padding:56px 0 24px}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
-footer h5{color:#fff;font-size:15px;margin-bottom:14px}
-footer li{list-style:none;margin:8px 0;font-size:14px}
-footer li a:hover{color:var(--yellow)}
-.flogo{display:flex;align-items:center;gap:10px;color:#fff;font-size:22px;margin-bottom:12px}
-.flogo img{width:48px;height:48px;border-radius:12px}
-.copy{border-top:1px solid #2c1a10;margin-top:36px;padding-top:20px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--brown);color:#fff;padding:12px 20px;border-radius:14px;font-weight:600;font-size:14px;transition:.35s;z-index:99;box-shadow:var(--shadow)}
-.toast.show{transform:translate(-50%,0)}
-
-@media (max-width:900px){
-  .hero-in{grid-template-columns:1fr;padding:44px 20px 80px}
-  .hero-art{max-width:340px}
-  .quick,.steps,.partner{grid-template-columns:1fr}
-  .app{grid-template-columns:1fr;padding:32px}
-  .app-logo{width:180px}
-  .fgrid{grid-template-columns:1fr 1fr}
-  .search,.loc .addr{display:none}
-}
-@media (max-width:520px){
-  .wrap{padding:0 16px}
-  .logo span{font-size:18px}
-  .stats{gap:20px}
-  .how{padding:34px 22px}
-  .fgrid{grid-template-columns:1fr}
-  .f1{left:0}.f2{right:0}
-}
-</style>
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
-<body>
+<body class="lock">
 
-<header>
+<!-- Splash loader -->
+<div id="loader" aria-live="polite">
+  <div class="ld-cloche">
+    <div class="ld-steam"><span></span><span></span><span></span></div>
+    <div class="ld-food">🍛</div>
+    <div class="ld-dome"></div>
+    <div class="ld-plate"></div>
+  </div>
+  <div class="ld-name brand-txt">Good<b>Food</b>4You</div>
+  <div class="ld-bar"><i id="ldBar"></i></div>
+  <div class="ld-tag">Order • Enjoy • Repeat</div>
+</div>
+
+<header id="hdr">
   <div class="wrap top">
-    <a href="#" class="logo"><img src="assets/logo.jpeg" alt="GoodFood4You logo"><span class="brand-txt">Good<b>Food</b>4You</span></a>
-    <button class="loc" id="locBtn">
+    <a href="#top" class="logo"><img src="assets/logo.jpeg" alt="GoodFood4You logo"><span class="brand-txt">Good<b>Food</b>4You</span></a>
+    <button class="loc" id="locBtn" aria-label="Choose delivery location">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
       <span class="addr" id="locTxt">Select location</span> ▾
     </button>
     <label class="search">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9a8d7c" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="topSearch" placeholder="Search for restaurants, cuisines or dishes on GoodFood4You">
+      <input id="topSearch" placeholder="Search paneer, dosa, thali, biryani…" autocomplete="off">
     </label>
     <div class="icons">
-      <button class="icon-btn" aria-label="Cart" id="cartBtn">🛒<span class="badge" id="cartCount">0</span></button>
-      <button class="icon-btn" aria-label="Profile">👤</button>
+      <label class="vegsw" title="Show only pure veg"><input type="checkbox" class="vegToggle"><span class="tr"></span>Veg</label>
+      <button class="icon-btn" id="cartBtn" aria-label="Open cart">🛒<span class="lbl">Cart</span><span class="badge cartCount">0</span></button>
+      <button class="icon-btn" id="profileBtn" aria-label="Open profile"><span class="avatar" id="avatarSm">👤</span><span class="lbl" id="profileLbl">Login</span></button>
     </div>
   </div>
-  <nav class="wrap tabs">
+  <nav class="wrap tabs" id="tabs">
     <a class="tab active" href="#restaurants">🛵 Delivery</a>
-    <a class="tab" href="#restaurants">🍽️ Dining Out</a>
+    <a class="tab" href="#dishes">🥗 Pure Veg</a>
+    <a class="tab" href="#regions">🇮🇳 Indian Thalis</a>
     <a class="tab" href="#offers">🏷️ Offers</a>
-    <a class="tab" href="#offers">⭐ Gourmet</a>
-    <a class="tab" href="#cuisines">❤️ Collections</a>
+    <a class="tab" href="#restaurants" data-filter="Rating 4.5+">⭐ Gourmet</a>
+    <a class="tab" href="#restaurants" data-filter="Favourites">❤️ Collections</a>
     <a class="tab" href="#how">⚡ How it works</a>
   </nav>
 </header>
 
-<main>
+<main id="top">
 <section class="hero" style="padding:0">
   <div class="wrap hero-in">
-    <div>
+    <div class="rv">
       <span class="pill">🔥 Hot &amp; fresh in 30 minutes</span>
-      <h1>Good food,<br>made <em>4 You.</em></h1>
-      <p class="lead">Discover the best restaurants around you on GoodFood4You — from street-side favourites to premium dining, delivered hot to your door.</p>
+      <h1>Craving <span class="typed" id="typed">Paneer Tikka</span>?<br>Made <em>4 You.</em></h1>
+      <p class="lead">From sizzling paneer tikka to crispy masala dosa and royal thalis, GoodFood4You brings the best pure veg and Indian kitchens near you right to your door.</p>
       <div class="tagline">Order <i></i> Enjoy <i></i> Repeat</div>
       <form class="hero-search" id="heroForm">
-        <input id="heroInput" placeholder="Craving biryani, pizza, burgers…?">
+        <input id="heroInput" placeholder="Search dal makhani, dosa, thali…" autocomplete="off">
         <button class="btn btn-red" type="submit">Find Food</button>
       </form>
       <div class="stats">
-        <div><b>500+</b><span>Restaurants</span></div>
-        <div><b>30 min</b><span>Avg. delivery</span></div>
-        <div><b>4.8★</b><span>Customer rating</span></div>
+        <div><b data-count="500">0</b><span>Restaurants</span></div>
+        <div><b data-count="30" data-suf=" min">0</b><span>Avg. delivery</span></div>
+        <div><b data-count="120" data-suf="+">0</b><span>Veg dishes</span></div>
       </div>
     </div>
     <div class="hero-art">
       <div class="steam"><span></span><span></span><span></span></div>
-      <div class="plate"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80" alt="Fresh pizza"></div>
+      <div class="plate"><img id="heroImg" src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&q=80" alt="Indian veg thali"></div>
       <div class="float f1"><span class="e">🛵</span><div>On the way!<small>Arriving in 12 min</small></div></div>
-      <div class="float f2"><span class="e">🏷️</span><div>Flat 50% OFF<small>On your first order</small></div></div>
-      <div class="float f3"><span class="e">⭐</span><div>4.8 Rating<small>10k+ happy foodies</small></div></div>
+      <div class="float f2"><span class="e">🏷️</span><div>Flat 50% OFF<small>Use code GOOD50</small></div></div>
+      <div class="float f3"><span class="e">🌿</span><div>100% Pure Veg<small>Separate veg kitchens</small></div></div>
     </div>
   </div>
   <div class="swoosh"></div>
 </section>
 
-<div class="wrap" id="offers">
+<div class="wrap">
   <div class="quick">
-    <a class="qc o" href="#restaurants"><div><span class="eyebrow">Explore</span><h3>Offers</h3><p>Flat discounts every day</p></div><span class="em">🏷️</span></a>
-    <a class="qc g" href="#restaurants"><div><span class="eyebrow" style="color:var(--yellow)">Premium</span><h3>Gourmet</h3><p>Premium dining at home</p></div><span class="em">🍷</span></a>
-    <a class="qc c" href="#cuisines"><div><span class="eyebrow">For you</span><h3>Collections</h3><p>Your favourites, curated</p></div><span class="em">❤️</span></a>
+    <button class="qc o rv" data-go="offers"><div><span class="eyebrow">Explore</span><h3>Offers</h3><p>Flat discounts every day</p></div><span class="em">🏷️</span></button>
+    <button class="qc c rv" data-go="veg"><div><span class="eyebrow" style="color:var(--veg)">Pure Veg</span><h3>Veg Specials</h3><p>Thalis, curries &amp; more</p></div><span class="em">🥗</span></button>
+    <button class="qc g rv" data-go="gourmet"><div><span class="eyebrow" style="color:var(--yellow)">Premium</span><h3>Gourmet</h3><p>Top-rated dining at home</p></div><span class="em">🍷</span></button>
   </div>
 </div>
 
-<section id="cuisines">
+<section id="offers">
   <div class="wrap">
-    <div class="sec-h"><div><span class="eyebrow">Recommended for you</span><h2>What's on your mind?</h2></div></div>
-    <div class="cuisines" id="cuisineList"></div>
+    <div class="sec-h rv"><div><span class="eyebrow">Today's deals</span><h2>Offers made 4 You</h2></div><p>Tap "Copy code" and use it at checkout</p></div>
+    <div class="carousel rv" id="carousel">
+      <div class="slides" id="slides">
+        <div class="slide s1"><div><h3>50% OFF your first order</h3><p>Up to ₹100 off on any restaurant. Valid for new GoodFood4You users.</p><span class="code">GOOD50</span><button class="btn btn-dark copy-code" data-code="GOOD50">Copy code</button></div><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=75" alt="Paneer butter masala"></div>
+        <div class="slide s2"><div><h3>Pure Veg Thali Fest 🌿</h3><p>Flat ₹75 OFF on every veg thali above ₹299, from Gujarati to South Indian meals.</p><span class="code">VEGTHALI</span><button class="btn btn-dark copy-code" data-code="VEGTHALI">Copy code</button></div><img src="https://images.unsplash.com/photo-1680993032090-1ef7ea9b51e5?w=500&q=75" alt="Gujarati thali"></div>
+        <div class="slide s3"><div><h3>South Indian Sundays</h3><p>20% OFF on dosas, idlis and vadas, all day long.</p><span class="code">DOSA20</span><button class="btn btn-red copy-code" data-code="DOSA20">Copy code</button></div><img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=500&q=75" alt="Masala dosa"></div>
+        <div class="slide s4"><div><h3>Free delivery above ₹199</h3><p>No delivery fee on any order above ₹199. Order more, save more!</p><span class="code">FREEDEL</span><button class="btn btn-dark copy-code" data-code="FREEDEL">Copy code</button></div><img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=500&q=75" alt="Pav bhaji"></div>
+      </div>
+      <button class="car-nav p" id="prevS" aria-label="Previous offer">‹</button>
+      <button class="car-nav n" id="nextS" aria-label="Next offer">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="cuisines" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-h rv"><div><span class="eyebrow">Recommended for you</span><h2>What's on your mind?</h2></div><button class="link" id="clearCuisine" style="display:none">✕ Clear</button></div>
+    <div class="cuisines rv" id="cuisineList"></div>
+  </div>
+</section>
+
+<section id="dishes" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="eyebrow" style="color:var(--veg)">🌿 Pure veg specials</span><h2>Best of Indian veg food</h2></div>
+      <label class="vegsw"><input type="checkbox" class="vegToggle"><span class="tr"></span>Pure veg only</label>
+    </div>
+    <div class="filters rv" id="dishFilters"></div>
+    <div class="dgrid" id="dishGrid"></div>
+  </div>
+</section>
+
+<section id="regions" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-h rv"><div><span class="eyebrow">Taste of India</span><h2>Regional thalis &amp; flavours</h2></div><p>One tap to explore each region</p></div>
+    <div class="regions" id="regionList"></div>
   </div>
 </section>
 
 <section id="restaurants" style="padding-top:10px">
   <div class="wrap">
-    <div class="sec-h"><div><span class="eyebrow">Near you</span><h2><span id="resCount">12</span> restaurants delivering to you</h2></div><a class="link" href="#restaurants">See all →</a></div>
-    <div class="filters" id="filters"></div>
+    <div class="sec-h rv"><div><span class="eyebrow">Near you</span><h2><span id="resCount">12</span> restaurants delivering to you</h2></div><button class="link" id="resetAll">Reset filters ↺</button></div>
+    <div class="filters rv" id="filters"></div>
     <div class="grid" id="grid"></div>
     <div class="more"><button class="btn btn-dark" id="moreBtn">Load more restaurants</button></div>
   </div>
@@ -270,27 +145,38 @@ footer li a:hover{color:var(--yellow)}
 
 <section id="how">
   <div class="wrap">
-    <div class="how">
+    <div class="how rv">
       <div class="sec-h"><div><span class="eyebrow" style="color:var(--yellow)">Simple as 1-2-3</span><h2>How GoodFood4You works</h2></div></div>
       <div class="steps">
-        <div class="st"><div class="n">1</div><h3>Order</h3><p>Browse hundreds of menus and pick what you're craving in a few taps.</p></div>
-        <div class="st"><div class="n">2</div><h3>Enjoy</h3><p>Track your rider live and get your meal hot and fresh at your door.</p></div>
-        <div class="st"><div class="n">3</div><h3>Repeat</h3><p>Reorder your favourites in one tap and unlock rewards every time.</p></div>
+        <div class="st"><div class="n">1</div><h3>Order</h3><p>Browse hundreds of veg and Indian menus and add what you're craving in a few taps.</p></div>
+        <div class="st"><div class="n">2</div><h3>Enjoy</h3><p>Track your rider live and get your meal hot and fresh at your door in about 30 minutes.</p></div>
+        <div class="st"><div class="n">3</div><h3>Repeat</h3><p>Reorder favourites in one tap from your profile and unlock rewards every time.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section style="padding-top:0">
   <div class="wrap">
-    <div class="app">
+    <div class="sec-h rv"><div><span class="eyebrow">Loved by foodies</span><h2>What people say about GoodFood4You</h2></div></div>
+    <div class="tgrid">
+      <div class="tc rv"><div class="stars">★★★★★</div><p>"The Gujarati thali tasted just like home. Arrived hot in 25 minutes. GoodFood4You is now my go-to!"</p><div class="who"><span>P</span><div>Priya S.<small>Ahmedabad</small></div></div></div>
+      <div class="tc rv"><div class="stars">★★★★★</div><p>"Love the pure veg filter. I can finally order without worrying. Masala dosa was crispy and perfect."</p><div class="who"><span>R</span><div>Rahul M.<small>Bengaluru</small></div></div></div>
+      <div class="tc rv"><div class="stars">★★★★☆</div><p>"Great offers every day and super easy reordering. The paneer butter masala is a must try!"</p><div class="who"><span>A</span><div>Ananya K.<small>Delhi</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="app rv">
       <div>
         <span class="eyebrow" style="color:var(--brown)">Get the app</span>
         <h2>Hungry? GoodFood4You is just a tap away.</h2>
         <p>Exclusive app-only deals, live order tracking and lightning-fast reorders.</p>
         <div class="stores">
-          <a class="store" href="#"><span style="font-size:26px"></span><div>Download on the<b>App Store</b></div></a>
-          <a class="store" href="#"><span style="font-size:24px">▶</span><div>Get it on<b>Google Play</b></div></a>
+          <button class="store soon-btn"><span style="font-size:26px"></span><div>Download on the<b>App Store</b></div></button>
+          <button class="store soon-btn"><span style="font-size:24px">▶</span><div>Get it on<b>Google Play</b></div></button>
         </div>
       </div>
       <img class="app-logo" src="assets/logo.jpeg" alt="GoodFood4You app">
@@ -300,8 +186,8 @@ footer li a:hover{color:var(--yellow)}
 
 <section style="padding-top:0">
   <div class="wrap partner">
-    <div class="pc"><span class="em">🏪</span><div><h3>Partner with GoodFood4You</h3><p>Grow your restaurant's reach and get more orders every day.</p><a class="btn btn-dark" href="#">Register restaurant</a></div></div>
-    <div class="pc"><span class="em">🛵</span><div><h3>Ride with GoodFood4You</h3><p>Flexible hours, weekly payouts. Become a delivery partner.</p><a class="btn btn-red" href="#">Join as rider</a></div></div>
+    <div class="pc rv"><span class="em">🏪</span><div><h3>Partner with GoodFood4You</h3><p>Grow your restaurant's reach and get more orders every day.</p><button class="btn btn-dark" data-partner="restaurant">Register restaurant</button></div></div>
+    <div class="pc rv"><span class="em">🛵</span><div><h3>Ride with GoodFood4You</h3><p>Flexible hours, weekly payouts. Become a delivery partner.</p><button class="btn btn-red" data-partner="rider">Join as rider</button></div></div>
   </div>
 </section>
 </main>
@@ -311,97 +197,72 @@ footer li a:hover{color:var(--yellow)}
     <div class="fgrid">
       <div>
         <div class="flogo"><img src="assets/logo.jpeg" alt=""><span class="brand-txt">Good<b>Food</b>4You</span></div>
-        <p style="font-size:14px;max-width:300px">Order • Enjoy • Repeat. Your favourite food from the best local restaurants, delivered fast.</p>
+        <p style="font-size:14px;max-width:300px">Order • Enjoy • Repeat. Your favourite pure veg and Indian food from the best local restaurants, delivered fast.</p>
       </div>
-      <div><h5>Company</h5><ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul></div>
-      <div><h5>For you</h5><ul><li><a href="#offers">Offers</a></li><li><a href="#offers">Gourmet</a></li><li><a href="#cuisines">Collections</a></li></ul></div>
-      <div><h5>Help</h5><ul><li><a href="#">Support</a></li><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#dishes">Pure Veg</a></li><li><a href="#regions">Indian Thalis</a></li><li><a href="#offers">Offers</a></li></ul></div>
+      <div><h5>Account</h5><ul><li><button class="open-profile">My profile</button></li><li><button class="open-orders">My orders</button></li><li><button class="open-cart">My cart</button></li></ul></div>
+      <div><h5>Help</h5><ul><li><a href="#how">How it works</a></li><li><a href="#top">Terms</a></li><li><a href="#top">Privacy</a></li></ul></div>
     </div>
     <div class="copy"><span>© <span id="yr"></span> GoodFood4You. All rights reserved.</span><span>Made with ❤️ for food lovers</span></div>
   </div>
 </footer>
 
+<!-- Floating cart bar -->
+<div class="cartbar" id="cartbar"><div class="info"><b id="cbCount">0 items</b><span id="cbTotal">₹0</span> + taxes</div><button class="open-cart">View cart →</button></div>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<!-- Mobile bottom nav -->
+<nav class="bnav">
+  <button class="on" data-bn="home"><span class="i">🏠</span>Home</button>
+  <button data-bn="search"><span class="i">🔍</span>Search</button>
+  <button data-bn="veg"><span class="i">🌿</span>Veg</button>
+  <button data-bn="cart"><span class="i">🛒</span>Cart<span class="badge cartCount">0</span></button>
+  <button data-bn="profile"><span class="i">👤</span>Profile</button>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- Cart drawer -->
+<aside class="drawer" id="cartDrawer" aria-label="Cart">
+  <div class="dh"><h3>🛒 <span id="cartTitle">Your cart</span></h3><button class="x close-all" aria-label="Close">✕</button></div>
+  <div class="db" id="cartBody"></div>
+  <div class="df" id="cartFoot"></div>
+</aside>
+
+<!-- Profile drawer -->
+<aside class="drawer" id="profileDrawer" aria-label="Profile">
+  <div class="dh"><h3>👤 <span id="profTitle">My account</span></h3><button class="x close-all" aria-label="Close">✕</button></div>
+  <div class="db" id="profBody"></div>
+</aside>
+
+<!-- Restaurant menu modal -->
+<div class="modal wide" id="menuModal" role="dialog" aria-modal="true">
+  <div class="rhero"><img id="mImg" alt=""><div><h3 id="mName"></h3><p id="mMeta"></p></div><button class="x close-all" aria-label="Close">✕</button></div>
+  <div class="db" id="mBody"></div>
+</div>
+
+<!-- Location modal -->
+<div class="modal" id="locModal" role="dialog" aria-modal="true">
+  <div class="dh"><h3>📍 Delivery location</h3><button class="x close-all" aria-label="Close">✕</button></div>
+  <div class="db">
+    <p style="color:var(--muted);font-size:14px;margin-bottom:12px">We use your location to show nearby GoodFood4You restaurants and accurate delivery times.</p>
+    <button class="btn btn-red btn-block" id="detectLoc">📡 Detect my location</button>
+    <div style="text-align:center;margin:14px 0;color:var(--muted);font-size:13px">or enter manually</div>
+    <div class="fld" id="fLocArea"><label>Area / Street</label><input id="locArea" placeholder="e.g. MG Road, Indiranagar"><div class="err">Please enter your area</div></div>
+    <div class="two"><div class="fld"><label>City</label><input id="locCity" placeholder="City"></div><div class="fld"><label>Pincode</label><input id="locPin" placeholder="560001" inputmode="numeric" maxlength="6"></div></div>
+    <button class="btn btn-dark btn-block" id="saveLoc">Save address</button>
+    <div class="locs" id="popularLocs"></div>
+  </div>
+</div>
+
+<!-- Info modal (partner / app) -->
+<div class="modal" id="infoModal" role="dialog" aria-modal="true">
+  <div class="dh"><h3 id="infoTitle"></h3><button class="x close-all" aria-label="Close">✕</button></div>
+  <div class="db" id="infoBody"></div>
+</div>
+
 <div class="toast" id="toast"></div>
 
-<script>
-const U = id => `https://images.unsplash.com/photo-${id}?w=600&q=75`;
-const cuisines = [
-  ["Pizza","1565299624946-b28f40a0ae38"],["Burger","1568901346375-23c9450c58cd"],["Biryani","1563379091339-03b21ab4a4f8"],
-  ["North Indian","1585937421612-70a008356fbe"],["Healthy","1512621776951-a57141f2eefd"],["Grill","1555939594-58d7cb561ad1"],
-  ["Salads","1540189549336-e6e99c3679fe"],["Breakfast","1567620905732-2d1ec7ab7445"],["Snacks","1601050690597-df0568f70950"],
-  ["Desserts","1551024601-bec78aea704b"]
-];
-const restaurants = [
-  {n:"Flavour Kingdom",c:"Multi-cuisine",t:"Pizza",r:0,time:25,img:"1565299624946-b28f40a0ae38",off:"50% OFF up to ₹100",tag:"NEW"},
-  {n:"Tasty Tales",c:"North Indian",t:"North Indian",r:5.0,time:30,img:"1585937421612-70a008356fbe",off:"Flat ₹75 OFF",tag:"Featured"},
-  {n:"Burger Barn",c:"Burgers • Fast food",t:"Burger",r:4.4,time:20,img:"1568901346375-23c9450c58cd",off:"Buy 1 Get 1"},
-  {n:"Fusion Cloud Kitchen",c:"Multi-cuisine",t:"Healthy",r:0,time:45,img:"1512621776951-a57141f2eefd",off:"20% OFF",tag:"NEW"},
-  {n:"Royal Biryani House",c:"Biryani • Mughlai",t:"Biryani",r:4.6,time:35,img:"1563379091339-03b21ab4a4f8",off:"Free dessert"},
-  {n:"Flavour Bites",c:"Snacks • Chaat",t:"Snacks",r:4.2,time:30,img:"1601050690597-df0568f70950",off:"40% OFF up to ₹80"},
-  {n:"Corporate House",c:"Multi-cuisine",t:"Grill",r:0,time:15,img:"1555939594-58d7cb561ad1",off:"Flat ₹50 OFF",tag:"NEW"},
-  {n:"Aman Da Dhaba",c:"Punjabi • North Indian",t:"North Indian",r:4.3,time:15,img:"1546069901-ba9599a7e63c",off:"Combo deals"},
-  {n:"Green Bowl Co.",c:"Salads • Healthy",t:"Salads",r:4.7,time:25,img:"1540189549336-e6e99c3679fe",off:"15% OFF"},
-  {n:"Sunrise Pancakes",c:"Breakfast • Cafe",t:"Breakfast",r:4.5,time:20,img:"1567620905732-2d1ec7ab7445",off:"Free coffee"},
-  {n:"Sweet Tooth",c:"Desserts • Bakery",t:"Desserts",r:4.8,time:20,img:"1551024601-bec78aea704b",off:"30% OFF"},
-  {n:"The Rustic Table",c:"North Indian",t:"North Indian",r:2.3,time:30,img:"1504674900247-0877df9cc836",off:"Opening soon",tag:"OPENING SOON"}
-];
-const filters = ["All","Pizza","Burger","Biryani","North Indian","Healthy","Rating 4.5+","Fast delivery"];
-let active = "All", query = "", shown = 8, cart = 0;
-
-const $ = s => document.querySelector(s);
-const fb = "this.style.opacity=0";
-
-$("#cuisineList").innerHTML = cuisines.map(([n,i]) =>
-  `<button class="cu" data-c="${n}"><div class="ci"><img loading="lazy" src="${U(i)}" alt="${n}" onerror="${fb}"></div><span>${n}</span></button>`).join("");
-$("#filters").innerHTML = filters.map(f => `<button class="chip ${f==="All"?"on":""}" data-f="${f}">${f}</button>`).join("");
-
-function list(){
-  return restaurants.filter(r => {
-    if (query && !(r.n+r.c+r.t).toLowerCase().includes(query)) return false;
-    if (active==="All") return true;
-    if (active==="Rating 4.5+") return r.r>=4.5;
-    if (active==="Fast delivery") return r.time<=20;
-    return r.t===active;
-  });
-}
-function render(){
-  const l = list();
-  $("#resCount").textContent = l.length;
-  $("#grid").innerHTML = l.slice(0,shown).map(r => `
-    <article class="rc">
-      <div class="im">
-        <img loading="lazy" src="${U(r.img)}" alt="${r.n}" onerror="${fb}">
-        ${r.tag?`<span class="tagb ${r.tag==="OPENING SOON"?"soon":""}">${r.tag}</span>`:""}
-        <button class="fav" aria-label="Favourite" onclick="this.textContent=this.textContent==='🤍'?'❤️':'🤍'">🤍</button>
-        <div class="offer">${r.off}</div>
-      </div>
-      <div class="bd">
-        <h4>${r.n}<span class="rate ${r.r?"":"new"}">${r.r?r.r.toFixed(1)+" ★":"NEW"}</span></h4>
-        <div class="meta"><span>${r.c}</span></div>
-        <div class="meta"><span>🕒 ${r.time} min</span><span>•</span><span>📍 1.2 km</span></div>
-        <button class="btn btn-red add" style="margin-top:12px;padding:9px 16px;font-size:13px;width:100%;justify-content:center" ${r.tag==="OPENING SOON"?"disabled style='opacity:.5'":""}>Order now</button>
-      </div>
-    </article>`).join("") || `<p style="color:var(--muted)">No restaurants found. Try another search.</p>`;
-  $("#moreBtn").style.display = l.length>shown ? "" : "none";
-}
-function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),2200)}
-function setFilter(f){active=f;shown=8;document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c.dataset.f===f));render()}
-
-$("#filters").onclick = e => { const c=e.target.closest(".chip"); if(c) setFilter(c.dataset.f) };
-$("#cuisineList").onclick = e => { const c=e.target.closest(".cu"); if(!c) return;
-  query=c.dataset.c.toLowerCase(); setFilter("All"); location.hash="restaurants" };
-$("#grid").onclick = e => { if(e.target.closest(".add")){ cart++; $("#cartCount").textContent=cart; toast("Added to your GoodFood4You cart 🛒") } };
-$("#moreBtn").onclick = () => { shown+=8; render() };
-$("#topSearch").oninput = e => { query=e.target.value.trim().toLowerCase(); render() };
-$("#heroForm").onsubmit = e => { e.preventDefault(); query=$("#heroInput").value.trim().toLowerCase(); setFilter("All"); location.hash="restaurants" };
-$("#locBtn").onclick = () => {
-  if(!navigator.geolocation) return toast("Location not available");
-  navigator.geolocation.getCurrentPosition(()=>{$("#locTxt").textContent="Current location";toast("📍 Showing restaurants near you")},()=>toast("Location permission denied"));
-};
-$("#cartBtn").onclick = () => toast(cart?`${cart} item(s) in your cart`:"Your cart is empty");
-document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));t.classList.add("active")}));
-$("#yr").textContent = new Date().getFullYear();
-render();
-</script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
